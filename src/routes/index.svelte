@@ -2,9 +2,10 @@
 	import ContactModal from '../components/layout/ContactModal.svelte';
 	import M from 'materialize-css/dist/js/materialize.min.js';
 	import { onMount } from 'svelte';
+	import { browser } from '$app/env';
 
 	onMount(() => {
-		if (typeof window !== 'undefined') {
+		if (browser) {
 			M.AutoInit();
 		}
 	});

@@ -1,3 +1,7 @@
+<script context="module">
+	export const ssr = false;
+</script>
+
 <script>
 	import M from 'materialize-css/dist/js/materialize.min.js';
 	import { onMount } from 'svelte';
@@ -8,8 +12,6 @@
 	onMount(() => {
 		if (browser) {
 			M.AutoInit();
-		} else {
-			console.log('booo');
 		}
 	});
 </script>
