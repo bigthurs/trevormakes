@@ -3,10 +3,13 @@
 	import { onMount } from 'svelte';
 	import projects from '../data/projects';
 	import ProjectCard from '../components/cards/ProjectCard.svelte';
+	import { browser } from '$app/env';
 
 	onMount(() => {
-		if (typeof window !== 'undefined') {
+		if (browser) {
 			M.AutoInit();
+		} else {
+			console.log('booo');
 		}
 	});
 </script>

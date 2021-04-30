@@ -4,7 +4,9 @@
 	import { onMount } from 'svelte';
 
 	onMount(() => {
-		M.AutoInit();
+		if (typeof window !== 'undefined') {
+			M.AutoInit();
+		}
 	});
 </script>
 
