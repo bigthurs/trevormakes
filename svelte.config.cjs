@@ -1,4 +1,4 @@
-const netlify = require('@sveltejs/adapter-netlify');
+const staticAdapter = require('@sveltejs/adapter-static');
 
 /** @type {import('@sveltejs/kit').Config} */
 module.exports = {
@@ -6,6 +6,8 @@ module.exports = {
 		// hydrate the <div id="svelte"> element in src/app.html
 		target: '#svelte',
 		// prod netlify server
-		adapter: netlify()
+		adapter: {
+			adapt: staticAdapter
+		}
 	}
 };

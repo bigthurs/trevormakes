@@ -1,7 +1,7 @@
 <script>
 	import ContactModal from '../components/layout/ContactModal.svelte';
-	import M from 'materialize-css/dist/js/materialize.min.js';
 	import { onMount } from 'svelte';
+	import M from 'materialize-css/dist/js/materialize.min.js';
 	import { browser } from '$app/env';
 
 	onMount(() => {
