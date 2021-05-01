@@ -6,8 +6,8 @@ module.exports = {
 		// hydrate the <div id="svelte"> element in src/app.html
 		target: '#svelte',
 		// prod netlify server
-		adapter: {
-			adapt: staticAdapter
-		}
+		// adapter: {
+		// 	adapt: staticAdapter
+		// }
 	}
 };

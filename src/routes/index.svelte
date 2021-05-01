@@ -1,23 +1,17 @@
 <script>
 	import ContactModal from '../components/layout/ContactModal.svelte';
-	import { onMount } from 'svelte';
-	import M from 'materialize-css/dist/js/materialize.min.js';
-	import { browser } from '$app/env';
-
-	onMount(() => {
-		if (browser) {
-			M.AutoInit();
-		}
-	});
+	let contactModal;
 </script>
 
 <svelte:head>
 	<title>Index</title>
 </svelte:head>
 
-<ContactModal />
+
 <main>
 	<h1 class="green-text darken-2">Welcome to trevormakes</h1>
+
+	<ContactModal />
 </main>
 
 <style>
