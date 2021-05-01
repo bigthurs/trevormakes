@@ -1,30 +1,21 @@
 <script>
-	import M from 'materialize-css/dist/js/materialize.min.js';
-	import { onMount } from 'svelte';
-	import projects from '../data/projects';
-	import ProjectCard from '../components/cards/ProjectCard.svelte';
-	import { browser } from '$app/env';
-
-	onMount(() => {
-		if (browser) {
-			M.AutoInit();
-		}
-	});
+	import ProjectCarousel from '../components/layout/ProjectCarousel.svelte';
 </script>
 
-<div class="carousel center">
-	{#each projects as project}
-		<div class="carousel-item">
-			<ProjectCard {project} />
+
+<main>
+	<div class="container">
+		<div class="section">
+			A gallery of projects I've made! Check out the code repo or live version via the links, and reach out if you're interested in something similar.
 		</div>
-	{/each}
-</div>
+		<div class="section">
+			<div class="row">
+				<ProjectCarousel />
+			</div>
+		</div>
+	</div>
+</main>
 
 <style>
-	.carousel-item {
-		right: 0;
-		min-width: 80%;
-		min-height: 80%;
-		padding-top: 5em;
-	}
+
 </style>

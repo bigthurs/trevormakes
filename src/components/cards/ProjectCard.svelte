@@ -1,40 +1,84 @@
 <script>
 	export let project;
+	const { name, img, description, repo, link, stack} = project
+	const { frontend, backend, db, host } = stack
+
+	let detailsRevealed = false;
+
+	const toggleDetails = () =>
+		detailsRevealed = !detailsRevealed
+
 </script>
 
-<div class="card">
-	<div class="card-image waves-effect waves-block waves-light">
-		<img class="activator" src={project.img} />
-	</div>
-	<div class="card-content" />
-	<span class="card-title activator grey-text text-darken-4"
-		>{project.name}<i class="material-icons right">more_vert</i></span
-	>
-	<div class="card-reveal">
-		<span class="card-title grey-text text-darken-4"
-			>{project.name}<i class="material-icons right">close</i></span
-		>
-		<div class="row">
-			<div class="col s3"><a target="_blank" href={project.repo}>Check out the repo!</a></div>
-			{#if project.newTab}
-				<div class="col s3 offset-s6">
-					<a target="_blank" href={project.link}>Check it out live!</a>
-				</div>
+<main>
+	<div class="card">
+		<div class="container">
+			{#if !detailsRevealed}
+					<div class="row center">
+						<btn on:click={() => toggleDetails()}><img class="circle" src={img} /></btn>
+					</div>
+						<btn on:click={() => toggleDetails()}>
+							<i class="material-icons right">more_vert</i>
+						</btn>
+					<div class="row">
+						<btn  on:click={() => toggleDetails()}><span class="card-title grey-text text-darken-4"
+							>{name}</span>
+						</btn>
+					</div>
+					<div class="row">
+						{description}
+					</div>
 			{:else}
-				<div class="col s3 offset-s6"><a href={project.link}>Check it out live!</a></div>
+				<btn class="col s1 offset-s11" on:click={() => toggleDetails()}><i class="material-icons">close</i></btn>
+				<div class="details-revealed">
+					<div class="center">
+						<btn on:click={() => toggleDetails()}><span class="card-title grey-text text-darken-4"
+							>{name}</span
+						></btn>
+					</div>
+					<div class="row">
+						<div class="left"><a target="_blank" href={repo}>Check out the repo!</a></div>
+						<div class="right">
+							{#if project.newTab}
+								<a target="_blank" href={link}>Check it out live!</a>
+							{:else}
+								<a href={project.link}>Check it out live!</a>
+							{/if}
+						</div>
+					</div>
+					<h4 class="center">Tech Stack</h4>
+					<p>Frontend: {frontend}</p>
+					<p>Backend: {backend}</p>
+					<p>Database: {db}</p>
+					<p>Host: {host}</p>
+				</div>
 			{/if}
 		</div>
-
-		<p>Description: {project.description}</p>
-		<p>Stack: {project.stack}</p>
 	</div>
-</div>
+</main>
+
 
 <style>
+    btn:hover {
+        cursor: pointer;
+    }
+
+	.close-button {
+		top: 0;
+		right: 0;
+	}
+
+	h4 {
+		font-size: 1em;
+	}
+
 	.card {
 		padding-top: 5em;
+		padding-bottom: 5em;
 		height: 100%;
 	}
+	
+	
 
 	img {
 		height: 75px;

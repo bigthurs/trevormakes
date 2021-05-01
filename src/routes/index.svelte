@@ -1,6 +1,5 @@
 <script>
 	import ContactModal from '../components/layout/ContactModal.svelte';
-	let contactModal;
 </script>
 
 <svelte:head>

@@ -23,7 +23,7 @@
 	{/if}
 </div>
 {#if shown}
-<div class="modal-wrapper black">
+<div class="modal-wrapper">
 	<div class="modal">
 		<h4 class="green-text darken-2">Reach out to me!</h4>
 		<div class="row">
@@ -50,8 +50,9 @@
 	}
 
 	.modal-wrapper {
+		background-color: rgb(0, 0, 0);
+		background-color: rgba(0, 0, 0, 0.7);
 		z-index: 1;
-		opacity: 80%;
 		position: fixed;
 		width: 100%;
 		height: 100%;
