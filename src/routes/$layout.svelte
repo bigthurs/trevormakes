@@ -1,10 +1,12 @@
-<script>
-	import Nav from '../components/layout/Nav.svelte';
+<script>;
 	import Footer from '../components/layout/Footer.svelte';
+	import NavModal from '../components/layout/NavModal.svelte'
+	import ContactModal from "../components/layout/ContactModal.svelte"
 </script>
 
 <main class="site">
-	<Nav />
+	<NavModal />
+	<ContactModal />
 	<div class="container site-content">
 		<slot />
 	</div>

@@ -15,7 +15,7 @@
 		<div class="container">
 			{#if !detailsRevealed}
 					<div class="row center">
-						<btn on:click={() => toggleDetails()}><img class="circle" src={img} /></btn>
+						<btn on:click={() => toggleDetails()}><img class="circle responsive-img project-icon" src={img} /></btn>
 					</div>
 						<btn on:click={() => toggleDetails()}>
 							<i class="material-icons right">more_vert</i>
@@ -63,11 +63,6 @@
         cursor: pointer;
     }
 
-	.close-button {
-		top: 0;
-		right: 0;
-	}
-
 	h4 {
 		font-size: 1em;
 	}
@@ -78,10 +73,14 @@
 		height: 100%;
 	}
 	
-	
+	.project-icon {
+		background-color: #2e7d32 ;
+		height: 160px;
+		width: 125px;
+	}
 
 	img {
-		height: 75px;
-		width: 200px;
+		height: 125px;
+		width: 125px;
 	}
 </style>

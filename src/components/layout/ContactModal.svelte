@@ -1,77 +1,103 @@
 <script>
-	export let shown = false
-	export function toggleShown() {
-		shown = !shown
-	}
+	import {slide, fade} from 'svelte/transition'
+
+	let email;
+	let message;
+	let name;
+
+	let emailExpanded = false;
+    const toggleEmail = () => 
+        emailExpanded = !emailExpanded
 
 	const sendEmail = () => {
 		alert("Thanks! Email sent, I'll get back to you shortly!")
-		toggleShown()
+		email = '';
+		message = '';
+		name = ''
+		toggleEmail()
 	}
 </script>
 
-
+<main>
 <div class="fixed-action-btn">
-	{#if shown}
-		<button on:click={() => toggleShown()} class="btn-floating red darken-2">
+		{#if emailExpanded}
+		<button on:click={() => toggleEmail()} class="btn-floating red darken-3">
 			<i class="large material-icons">close</i>
 		</button>
-	{:else}
-		<button on:click={() => toggleShown()} class="btn-floating green darken-2">
-			<i class="large material-icons">email</i>
+		{:else}
+		<button on:click={() => toggleEmail()} class="btn-floating green darken-3">
+			<i class="large material-icons">email</i>		
 		</button>
-	{/if}
+		{/if}
+	
 </div>
-{#if shown}
-<div class="modal-wrapper">
-	<div class="modal">
-		<h4 class="green-text darken-2">Reach out to me!</h4>
-		<div class="row">
-			<div class="input-field col s8">
-				<input type="text" name="email" />
-				<label for="email">Your Email</label>
-			</div>
-			<div class="col s2 offset-s2">
-				<a on:click={() => sendEmail()} class="green darken-2 btn">Send</a>
-			</div>
+
+{#if emailExpanded}
+<div class="center">
+	<div class="email-form" transition:slide="{{ x: 500, duration: 1000 }}" class:emailExpanded>
+		<div class="section-email container">
+			<input class="grey lighten-3" bind:value={email} placeholder="your email"/>
+			<input class="grey lighten-3" bind:value={name} placeholder="your name"/>
 		</div>
-		<div class="input-field">
-			<textarea id="textarea1" class="materialize-textarea" />
-			<label for="message">Message</label>
-		</div>
+		<div class="section-message container">
+			<textarea class="grey lighten-3" bind:value={message} placeholder="your message"></textarea>
+			<button on:click={() => sendEmail()} class="btn waves-effect waves-light white green-text text-darken-3 submit-button" type="submit" name="action">Submit
+				<i class="material-icons right">send</i>
+			</button>
+		</div>	
 	</div>
 </div>
 {/if}
-
+</main>
 
 <style>
+	.center {
+		margin-top: -10%;
+	}
+
 	.fixed-action-btn {
-		top: 10%;
+		z-index: 2;
+		top: 8%;
 	}
 
-	.modal-wrapper {
-		background-color: rgb(0, 0, 0);
-		background-color: rgba(0, 0, 0, 0.7);
-		z-index: 1;
-		position: fixed;
+    .email-form {
+        margin-right: auto;
+        pointer-events: none;
+        position: fixed;
+        background-color: #2e7d32 ;
+        height: 110vh;
+        width: 100%;
+        flex-direction: column;
+        clip-path: circle(100px at 90% -10%);
+        -webkit-clip-path: circle(100px at 90% -10%);
+        transition: all 1s ease;
+		opacity: 0
+    }
+
+    .emailExpanded {
+        pointer-events: all;
+        clip-path: circle(1000px at 90% -10%);
+        -webkit-clip-path: circle(1000px at 90% -10%);
+		opacity: 1;
+    }
+
+	.section-email {
+        margin-top: 3em;
+        justify-content: center;
+        min-height: 10vh;
+    }
+
+	.section-message {
+        justify-content: center;
+        min-height: 50vh;
+    }
+
+	textarea {
 		width: 100%;
-		height: 100%;
-		top: 0;
-		left: 0;
+		height: 200px;
 	}
 
-	.modal {
-		z-index: 0;
-		opacity: 100%;
-		display: block;
-		background-color: white;
-		max-width: 80vw;
-		max-height: 80vw;
-		padding: 1rem;
-		margin: 15%;
-	}
-
-	.modal h4, .btn {
-		opacity: 100%
+	.submit-button {
+		margin-top: 2em;
 	}
 </style>

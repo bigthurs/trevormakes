@@ -1,4 +1,4 @@
-<footer class="page-footer green lighten-2">
+<footer class="page-footer">
 	<div class="container">
 		© 2021 Created by Trevor Hursey
 		<div class="right">
@@ -6,3 +6,9 @@
 		</div>
 	</div>
 </footer>
+
+<style>
+	.page-footer {
+		background-color: #2e7d32;
+	}
+</style>

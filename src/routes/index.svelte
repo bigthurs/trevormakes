@@ -1,5 +1,5 @@
 <script>
-	import ContactModal from '../components/layout/ContactModal.svelte';
+	
 </script>
 
 <svelte:head>
@@ -8,12 +8,24 @@
 
 
 <main>
-	<h1 class="green-text darken-2">Welcome to trevormakes</h1>
-
-	<ContactModal />
+	<div class="section"></div>
+		<h1 class="green-text darken-2">Welcome to trevormakes</h1>
+	<div class="section">
+		<h1 class="green-text darken-2">Welcome to trevormakes</h1>
+	</div>
+	<div class="section">
+		<h1 class="green-text darken-2">Welcome to trevormakes</h1>
+	</div>
+	<div class="section">
+		<h1 class="green-text darken-2">Welcome to trevormakes</h1>
+	</div>
 </main>
 
 <style>
+	.section {
+		height: 50vh;
+	}
+
 	main {
 		text-align: center;
 		padding: 1em;

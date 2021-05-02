@@ -1,6 +1,7 @@
 <script>
     import ProjectCard from '../cards/ProjectCard.svelte'
     import projects from '../../data/projects'
+    import {fly} from 'svelte/transition'
 
     let currentProjectIndex = 0;
 
