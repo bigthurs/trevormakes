@@ -1,7 +1,7 @@
 <script>;
 	import Footer from '../components/layout/Footer.svelte';
-	import NavModal from '../components/layout/NavModal.svelte'
-	import ContactModal from "../components/layout/ContactModal.svelte"
+	import NavModal from '../components/modals/NavModal.svelte'
+	import ContactModal from "../components/modals/ContactModal.svelte"
 </script>
 
 <main class="site">

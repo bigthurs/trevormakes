@@ -1,5 +1,5 @@
 <script>
-	import ProjectCarousel from '../components/layout/ProjectCarousel.svelte';
+	import ProjectCarousel from '../components/carousels/ProjectCarousel.svelte';
 </script>
 
 

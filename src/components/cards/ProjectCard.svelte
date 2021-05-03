@@ -10,7 +10,8 @@
 
 </script>
 
-<main>
+
+<section>
 	<div class="card">
 		<div class="container">
 			{#if !detailsRevealed}
@@ -55,7 +56,8 @@
 			{/if}
 		</div>
 	</div>
-</main>
+</section>
+
 
 
 <style>
@@ -70,7 +72,7 @@
 	.card {
 		padding-top: 5em;
 		padding-bottom: 5em;
-		height: 100%;
+
 	}
 	
 	.project-icon {
