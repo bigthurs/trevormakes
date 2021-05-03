@@ -40,8 +40,6 @@
     <div class="index-display">
         <span class="green-text text-darken 2 text-large">{currentProjectIndex + 1} / {projects.length}</span>
     </div>
-    <btn on:click={() => prev()}><i class="material-icons center">navigate_before</i></btn>
-    <btn on:click={() => next()}><i class="material-icons center">navigate_next</i></btn>
 </div>
     
 <div class="section">

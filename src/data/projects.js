@@ -11,12 +11,7 @@ const projects = [
 		newTab: true,
 		description:
 			'A sanitized example of an application I built at MDR Pharmacy to replace manual price quoting by internal users.',
-		stack: {
-			frontend: 'React with Materialize for styling',
-			db: 'MongoDB with mongoose',
-			backend: 'Node and Express with Restful API',
-			host: 'Hosted on Heroku',
-		},
+		stack: "Built on the MERN stack. React with Materialize for styling, MongoDB with mongoose, Node and Express with Restful API.",
 		img: price_tag
 	},
 	{

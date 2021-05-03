@@ -33,38 +33,34 @@
 </div>
 
 {#if emailExpanded}
-<div class="center">
 	<div class="email-form" transition:slide="{{ x: 500, duration: 1000 }}" class:emailExpanded>
 		<div class="section-email container">
-			<input class="grey lighten-3" bind:value={email} placeholder="your email"/>
-			<input class="grey lighten-3" bind:value={name} placeholder="your name"/>
+			<input class="white" bind:value={email} placeholder="your email"/>
+			<input class="white" bind:value={name} placeholder="your name"/>
 		</div>
 		<div class="section-message container">
-			<textarea class="grey lighten-3" bind:value={message} placeholder="your message"></textarea>
+			<textarea class="white" bind:value={message} placeholder="your message"></textarea>
 			<button on:click={() => sendEmail()} class="btn waves-effect waves-light white green-text text-darken-3 submit-button" type="submit" name="action">Submit
 				<i class="material-icons right">send</i>
 			</button>
 		</div>	
 	</div>
-</div>
 {/if}
 </main>
 
 <style>
-	.center {
-		margin-top: -10%;
-	}
-
 	.fixed-action-btn {
 		z-index: 2;
 		top: 8%;
+		size: 3rem;
 	}
 
     .email-form {
+		margin-top: 0px;
         margin-right: auto;
         pointer-events: none;
         position: fixed;
-        background-color: #2e7d32 ;
+        background-color: #a5d6a7  ;
         height: 110vh;
         width: 100%;
         flex-direction: column;
@@ -79,6 +75,7 @@
         clip-path: circle(1000px at 90% -10%);
         -webkit-clip-path: circle(1000px at 90% -10%);
 		opacity: 1;
+		z-index: 1;
     }
 
 	.section-email {

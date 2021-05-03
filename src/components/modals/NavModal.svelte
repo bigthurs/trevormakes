@@ -8,16 +8,18 @@
 
     let iconConfig = {
 		color: "#2e7d32",
-		size: "5em",
-		width:"5em",
-		height: "5em",
+		size: "3em",
+		width:"4em",
+		height: "4em",
 	}
 </script>
 
 <main>
-    <a href="/" class="top left"><TIcon {...iconConfig}/></a>
+    <div class="fixed-action-btn brand-logo">
+        <a href="/"><TIcon {...iconConfig}/></a>
+    </div>
 
-    <div class="fixed-action-btn">
+    <div class="fixed-action-btn nav-button">
         <button on:click={() => toggleNav()} class="btn-floating green darken-3">
             {#if navExpanded}
                 <i class="large material-icons">close</i>
@@ -31,13 +33,13 @@
     <div class="center">
         <ul transition:slide="{{ y: 600, duration: 1000 }}" class="nav-links" class:navExpanded>
             <div class="section">
-                <li on:click={() => toggleNav()} transition:fade><a href="/" class="grey-text text-lighten-2">Home </a></li>
+                <li on:click={() => toggleNav()} transition:fade><a href="/" class="white-text">Home </a></li>
             </div>
             <div class="section">
-                <li on:click={() => toggleNav()} transition:fade><a href="/about" class="grey-text text-lighten-2">About </a></li>
+                <li on:click={() => toggleNav()} transition:fade><a href="/about" class="white-text">About </a></li>
             </div>
             <div class="section">
-                <li on:click={() => toggleNav()} transition:fade><a href="/projects" class="grey-text text-lighten-2">Projects</a></li>
+                <li on:click={() => toggleNav()} transition:fade><a href="/projects" class="white-text">Projects</a></li>
             </div>
         </ul>
     </div>
@@ -46,9 +48,20 @@
 
 <style>
     .fixed-action-btn {
+        top: 0%;
+        opacity: 1;
+    }
+
+    .nav-button {
         z-index: 2;
         top: 0%;
         opacity: 1;
+    }
+
+    .brand-logo {
+        z-index:0;
+        opacity: 1;
+        left: 0%
     }
 
     .nav-links li {
@@ -60,13 +73,14 @@
         margin-top: 0px;
         pointer-events: none;
         position: fixed;
-        background-color: #2e7d32 ;
+        background-color: #a5d6a7 ;
         height: 100vh;
         width: 100%;
         flex-direction: column;
         clip-path: circle(100px at 90% -10%);
         -webkit-clip-path: circle(100px at 90% -10%);
         transition: all 1s ease;
+        z-index:1;
     }
 
     .navExpanded {
