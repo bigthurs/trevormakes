@@ -78,6 +78,13 @@
 		z-index: 1;
     }
 
+	@media only screen and (min-width: 768px) {
+	.emailExpanded {
+		clip-path: circle(2000px at 90% -10%);
+        -webkit-clip-path: circle(2000px at 90% -10%);;
+  		}
+	}
+
 	.section-email {
         margin-top: 3em;
         justify-content: center;

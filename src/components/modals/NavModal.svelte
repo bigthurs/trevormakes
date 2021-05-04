@@ -100,4 +100,10 @@
         min-height: 33.3vh
     }
 
+	@media only screen and (min-width: 768px) {
+	.nav-links {
+		clip-path: circle(2000px at 90% -10%);
+        -webkit-clip-path: circle(2000px at 90% -10%);;
+  		}
+	}
 </style>

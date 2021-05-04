@@ -1,14 +1,13 @@
 <footer class="page-footer">
-	<div class="container">
+	<div class="container green-text text-darken-3 center">
 		© 2021 Created by Trevor Hursey
-		<div class="right">
-			All svg images for this page taken from <a href="iconscout.com">IconScout</a>
-		</div>
 	</div>
 </footer>
 
 <style>
 	.page-footer {
-		background-color: #2e7d32;
+		font-size: 0.5rem;
+		background-color: white;
+		font-style: italic;
 	}
 </style>

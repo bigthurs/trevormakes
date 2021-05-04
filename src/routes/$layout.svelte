@@ -20,6 +20,14 @@
 		flex-direction: column;
 	}
 
+	
+	@media only screen and (min-width: 768px) {
+	.site {
+			width: 80vw;
+			height: 80vh;
+  		}
+	}
+
 	.site-content {
 		flex: 1 0 auto;
 	}
