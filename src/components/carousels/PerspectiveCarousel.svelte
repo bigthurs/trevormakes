@@ -41,4 +41,5 @@
 		opacity: 0.8;
 		transform: translate3d(100%, 0, -10em);
 	}
+
 </style>
