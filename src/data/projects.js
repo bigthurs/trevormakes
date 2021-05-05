@@ -1,6 +1,6 @@
 import game from '../static/game.svg';
 import price_tag from '../static/price-tag.svg';
-import chess from '../static/chess.svg'
+import chess from '../static/chess.svg';
 
 const projects = [
 	{
@@ -11,7 +11,8 @@ const projects = [
 		newTab: true,
 		description:
 			'A sanitized example of an application I built at MDR Pharmacy to replace manual price quoting by internal users.',
-		stack: "Built on the MERN stack. React with Materialize for styling, MongoDB with mongoose, Node and Express with Restful API.",
+		stack:
+			'Built on the MERN stack. React with Materialize for styling, MongoDB with mongoose, Node and Express with Restful API.',
 		img: price_tag
 	},
 	{
@@ -22,12 +23,8 @@ const projects = [
 		newTab: false,
 		description:
 			'A utility built for myself and my friends to digitalize board game vicotry point and condition tracking.',
-		stack: {
-			frontend: 'Svelte with Materialize for styling and custom css components',
-			db: 'Simple JS files',
-			backend: 'Node',
-			host: 'Hosted on Netlify, and a route on this app',
-		},
+		stack:
+			'Svelte with Materialize for styling and custom css components.Node backend, hosted on Netlify, and a route on this app!',
 		img: game
 	},
 	{
@@ -36,13 +33,12 @@ const projects = [
 		repo: 'github.com/StuffILike',
 		link: './victorykeeper',
 		newTab: true,
-		description:
-			"A reddit clone built for my own posting of various links I've curated",
+		description: "A reddit clone built for my own posting of various links I've curated",
 		stack: {
 			frontend: 'React and Nextjs built with typescript',
 			db: 'PGSql, Redis for cache',
 			backend: 'Node with Graphql APIs',
-			host: 'Hosted on Netlify',
+			host: 'Hosted on Netlify'
 		},
 		img: game
 	},
@@ -58,7 +54,7 @@ const projects = [
 			frontend: 'Svelte with custom css components',
 			db: 'Simple JS files',
 			backend: 'Node',
-			host: 'Hosted on Netlify, and a route on this app',
+			host: 'Hosted on Netlify, and a route on this app'
 		},
 		img: chess
 	}
